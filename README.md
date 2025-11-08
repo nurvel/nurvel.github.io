@@ -1,9 +1,9 @@
 # nurmi.dev
 
-My [personal website](https://nurmi.dev) created with React and hosted with GitHub pages.
+My [personal website](https://nurvel.github.io) created with React and hosted with GitHub Pages.
 
 ## Get started 
 
-Run locally with `npm run start`.
+Run locally with `npm start`.
 
-Build files are in `gh-pages` branch. Run build and deployment locally with `npm run deploy`.
+Deploy with GitHub Pages via `npm run deploy` (uses `gh-pages` under the hood). The build output lives in the `gh-pages` branch.
