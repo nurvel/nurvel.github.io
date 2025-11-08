@@ -10,26 +10,20 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-gtm-module": "^2.0.11",
-    "react-scripts": "^5.0.1",
     "styled-components": "^6.1.12",
     "typescript": "^5.5.4"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "deploy": "gh-pages -d dist",
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "echo \"Configure a test runner (e.g. Vitest)\" && exit 1"
   },
   "engines": {
     "node": ">=18"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -50,6 +44,8 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
     "@types/react-gtm-module": "^2.0.3",
-    "gh-pages": "^6.1.1"
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "gh-pages": "^6.1.1",
+    "vite": "^5.2.0"
   }
 }
