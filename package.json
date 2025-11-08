@@ -15,7 +15,6 @@
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
     "react": "^18.3.1",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.3.1",
     "react-gtm-module": "^2.0.11",
     "react-scripts": "^5.0.1",
@@ -52,7 +51,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/react-anchor-link-smooth-scroll": "^1.0.5",
     "@types/react-gtm-module": "^2.0.3",
     "gh-pages": "^6.1.1"
   }
