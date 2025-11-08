@@ -8,21 +8,27 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     padding: 0;
-    scroll-snap-type: y mandatory;
-    scroll-padding-top: 0;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
   }
 
   .section {
-  min-height: 100vh;
-  padding: 1em;
+    min-height: 100vh;
+    padding: 1em;
 
-  // CENTER SECTION CONTENT
-  display: flex;
-  justify-content: center;
-  scroll-snap-align: start;
+    // CENTER SECTION CONTENT
+    display: flex;
+    justify-content: center;
   }
 
   h1 {
