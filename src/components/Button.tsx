@@ -2,7 +2,6 @@ import React from "react";
 
 import styled from "styled-components";
 import configData from "../common/config.json";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Container = styled.div`
   background-color: #ffffff;
@@ -37,9 +36,9 @@ export default function Button(props: ButtonProps) {
 
   return (
     <Container className="">
-      <AnchorLink className="link" href={href}>
+      <a className="link" href={href}>
         {linkText}
-      </AnchorLink>
+      </a>
     </Container>
   );
 }
