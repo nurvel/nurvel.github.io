@@ -1,7 +1,5 @@
 import "./styles.css";
 import React from "react";
-import useScrollSnap from "react-use-scroll-snap";
-import { useRef } from "react";
 import GlobalStyle from "./common/globalStyles";
 import styled from "styled-components";
 
@@ -9,21 +7,16 @@ import Main from "./pages/Main";
 import About from "./pages/About";
 import Header from "./components/Header";
 
-const Container = styled.div``;
+const Container = styled.div`
+  min-height: 100vh;
+`;
 
 export default function App() {
-  const scrollRef = useRef(null);
-  useScrollSnap({
-    ref: scrollRef,
-    duration: 10,
-    // delay: 0,
-  });
-
   return (
     <Container>
       <GlobalStyle />
       <Header />
-      <section ref={scrollRef}>
+      <section>
         <Main />
         <About />
       </section>

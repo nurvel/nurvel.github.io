@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 0;
   }
 
   .section {
@@ -20,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
   // CENTER SECTION CONTENT
   display: flex;
   justify-content: center;
+  scroll-snap-align: start;
   }
 
   h1 {
