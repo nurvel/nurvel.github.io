@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <Container>
       <div className="header">
-        <p>VELI-PEKKA NURMI</p>
+        <p>nurmi.dev</p>
       </div>
     </Container>
   );
