@@ -35,10 +35,8 @@ export default function Button(props: ButtonProps) {
   const { linkText, href } = props;
 
   return (
-    <Container className="">
-      <a className="link" href={href}>
-        {linkText}
-      </a>
+    <Container as="a" href={href}>
+      {linkText}
     </Container>
   );
 }
