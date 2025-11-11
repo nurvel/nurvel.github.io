@@ -17,7 +17,7 @@ const AUTO_SCROLL_DURATION_MS = 600;
 
 const getClosestSectionIndex = (
   sections: HTMLElement[],
-  scrollTop: number,
+  scrollTop: number
 ): number => {
   return sections.reduce(
     (acc, section, idx) => {
@@ -27,7 +27,7 @@ const getClosestSectionIndex = (
       }
       return acc;
     },
-    { index: 0, distance: Number.POSITIVE_INFINITY },
+    { index: 0, distance: Number.POSITIVE_INFINITY }
   ).index;
 };
 
@@ -38,7 +38,7 @@ const useScrollSnap = (thresholdRatio: number, idleDelay: number) => {
     }
 
     const sections = Array.from(
-      document.querySelectorAll<HTMLElement>(".section"),
+      document.querySelectorAll<HTMLElement>(".section")
     );
 
     if (sections.length === 0) {
@@ -46,7 +46,7 @@ const useScrollSnap = (thresholdRatio: number, idleDelay: number) => {
     }
 
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
+      "(prefers-reduced-motion: reduce)"
     ).matches;
 
     let activeIndex = getClosestSectionIndex(sections, window.scrollY);
