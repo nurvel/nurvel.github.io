@@ -17,6 +17,26 @@ const Description = styled(BodyText)`
   margin: 0 0 3rem;
 `;
 
+const Focus = styled.div`
+  padding-top: 2rem;
+`;
+
+const FocusTitle = styled.h2`
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #FFF;
+  margin-bottom: 1rem;
+  font-weight: 600;
+`;
+
+const FocusContent = styled.p`
+  font-size: 1.05rem;
+  color: #999;
+  line-height: 1.7;
+  max-width: 650px;
+`;
+
 export default function About() {
   const theme = useTheme();
 
@@ -55,14 +75,21 @@ export default function About() {
           ]}
         />
         <Divider />
+        <Focus>
+          <FocusTitle>Current cocus</FocusTitle>
+          <FocusContent>
+            Exploring agentic coding and spec-driven development — where AI
+            handles implementation while human expertise guides strategic
+            direction, requirements engineering, and solution architecture. My
+            background in both business and technology positions me well for
+            this shift.
+          </FocusContent>
+        </Focus>
       </Content>
     </PageContainer>
   );
 }
 
 const Divider = styled.div`
-  border: none;
-  height: 1px;
-  background-color: rgba(229, 229, 229, 0.4);
-  margin: 3rem 0 2rem;
+  border-top: 1px solid #e5e5e5;
 `;
