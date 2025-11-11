@@ -4,6 +4,7 @@ const LinkGrid = styled.div`
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-bottom: 4rem;
 `;
 
 const StyledLink = styled.a`
@@ -17,7 +18,7 @@ const StyledLink = styled.a`
   transition: color 0.2s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.darkPink};
+    color: ${({ theme }) => theme.colors.brightPink};
   }
 `;
 
