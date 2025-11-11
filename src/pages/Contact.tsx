@@ -1,11 +1,20 @@
 import React from "react";
-import styled from "styled-components";
-import configData from "../common/config.json";
+import styled, { useTheme } from "styled-components";
+import { PageContainer, PageContent } from "../components/Page";
 
-const Container = styled.div`
-  background-color: ${configData.THEME_COLORS.DARK_BLUE};
+const ContactContent = styled(PageContent)`
+  min-height: ${({ theme }) => theme.layout.sectionMinHeight};
 `;
 
 export default function Contact() {
-  return <Container className="contact section">Contact</Container>;
+  const theme = useTheme();
+
+  return (
+    <PageContainer
+      className="contact"
+      background={theme.colors.darkBlue}
+    >
+      <ContactContent>Contact</ContactContent>
+    </PageContainer>
+  );
 }

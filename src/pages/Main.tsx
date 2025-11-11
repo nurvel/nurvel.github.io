@@ -1,61 +1,65 @@
 import React from "react";
-import configData from "../common/config.json";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 import _video_mobile_webm from "../assets/img/bg-video-mobile.webm";
 import { Button } from "../components/Button";
+import { PageContainer, PageContent } from "../components/Page";
 
-const Container = styled.div`
-  background-color: ${configData.THEME_COLORS.DARK_VIOLET};
+const HeroLayer = styled(PageContent)`
+  min-height: ${({ theme }) => theme.layout.sectionMinHeight};
+`;
 
-  .hero {
-    position: absolute;
-    top: 20vh;
-    max-width: 650px;
-    min-width: 300px;
-    text-align: left;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
+const Hero = styled.div`
+  position: absolute;
+  top: 20vh;
+  max-width: 650px;
+  min-width: 300px;
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+  z-index: 1;
+`;
 
-  .btnContainer {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-  }
+const ButtonRow = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+`;
+
+const VideoBackground = styled.video`
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 `;
 
 export default function Main() {
+  const theme = useTheme();
+
   return (
-    <Container className="section main">
-      <video
-        loop
-        muted
-        autoPlay
-        playsInline
-        style={{
-          position: "absolute",
-          width: "100%",
-          top: "50%",
-          left: "50%",
-          height: "100%",
-          objectFit: "cover",
-          transform: "translate(-50%, -50%)",
-          zIndex: "0",
-        }}
-      >
+    <PageContainer
+      className="main"
+      background={theme.colors.darkViolet}
+    >
+      <VideoBackground loop muted autoPlay playsInline>
         <source src={_video_mobile_webm} type="video/webm" />
         Your browser does not support the video tag.
-      </video>
-      <div className="hero">
-        <h1>Building products that matter.</h1>
-        <div className="btnContainer">
-          <Button as="a" href={"#about"}>
-            READ MORE
-          </Button>
-        </div>
-      </div>
-    </Container>
+      </VideoBackground>
+      <HeroLayer>
+        <Hero>
+          <h1>Building products that matter.</h1>
+          <ButtonRow>
+            <Button as="a" href={"#about"}>
+              READ MORE
+            </Button>
+          </ButtonRow>
+        </Hero>
+      </HeroLayer>
+    </PageContainer>
   );
 }
 
