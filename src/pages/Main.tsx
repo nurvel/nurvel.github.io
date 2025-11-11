@@ -10,11 +10,11 @@ import { PageContainer, PageContent } from "../components/Page";
 const Content = styled(PageContent)`
   max-width: 900px;
   min-height: ${({ theme }) => theme.layout.sectionMinHeight};
+  padding-top: min(20vh, 300px);
 `;
 
 const Hero = styled.div`
   position: absolute;
-  top: 20vh;
   max-width: 650px;
   min-width: 300px;
   text-align: left;
@@ -86,11 +86,3 @@ export default function Main() {
     </PageContainer>
   );
 }
-
-// Technology, Marketing and Analytics
-
-// MAIN
-// ABOUT
-// WORK
-// SKILLS
-// CONTACT

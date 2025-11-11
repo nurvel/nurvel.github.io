@@ -9,6 +9,7 @@ import { ContactLinks } from "../components/about/ContactLinks";
 const Content = styled(PageContent)`
   max-width: 900px;
   width: 100%;
+  padding-top: min(30vh, 200px);
   margin: 0 auto;
 `;
 
