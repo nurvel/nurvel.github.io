@@ -7,7 +7,8 @@ import heroPoster from "../assets/img/bg-lights.jpg";
 import { Button } from "../components/Button";
 import { PageContainer, PageContent } from "../components/Page";
 
-const HeroLayer = styled(PageContent)`
+const Content = styled(PageContent)`
+  max-width: 900px;
   min-height: ${({ theme }) => theme.layout.sectionMinHeight};
 `;
 
@@ -54,10 +55,7 @@ export default function Main() {
   const [videoAvailable, setVideoAvailable] = useState(true);
 
   return (
-    <PageContainer
-      className="main"
-      background={theme.colors.darkViolet}
-    >
+    <PageContainer className="main" background={theme.colors.darkViolet}>
       {videoAvailable ? (
         <VideoBackground
           loop
@@ -75,7 +73,7 @@ export default function Main() {
       ) : (
         <VideoFallback aria-hidden="true" />
       )}
-      <HeroLayer>
+      <Content>
         <Hero>
           <h1>Building products that matter.</h1>
           <ButtonRow>
@@ -84,7 +82,7 @@ export default function Main() {
             </Button>
           </ButtonRow>
         </Hero>
-      </HeroLayer>
+      </Content>
     </PageContainer>
   );
 }

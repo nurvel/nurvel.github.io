@@ -6,7 +6,7 @@ import { ProfileCard } from "../components/about/ProfileCard";
 import { RolesList } from "../components/about/RolesList";
 import { ContactLinks } from "../components/about/ContactLinks";
 
-const AboutContent = styled(PageContent)`
+const Content = styled(PageContent)`
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
@@ -25,7 +25,7 @@ export default function About() {
       id="about"
       background={theme.colors.darkViolet}
     >
-      <AboutContent>
+      <Content>
         <ProfileCard
           name="Veli-Pekka Nurmi"
           subtitle="Product Engineer | Bridging product & engineering with AI-augmented development"
@@ -54,7 +54,7 @@ export default function About() {
           ]}
         />
         <Divider />
-      </AboutContent>
+      </Content>
     </PageContainer>
   );
 }
