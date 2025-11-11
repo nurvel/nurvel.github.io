@@ -1,16 +1,11 @@
-import styled from "styled-components";
-import configData from "../common/config.json";
+import styled, { useTheme } from "styled-components";
 import ProfilePic from "../assets/img/veli-pekka-nurmi-profile.png";
+import { PageContainer, PageContent } from "../components/Page";
 
-const Container = styled.div`
-  min-height: 100vh;
-  background-color: ${configData.THEME_COLORS.DARK_VIOLET};
-`;
-
-const Content = styled.div`
+const AboutContent = styled(PageContent)`
   max-width: 900px;
-  @media (max-width: ${configData.mobileThreshold}) {
-  }
+  width: 100%;
+  margin: 0 auto;
 `;
 
 const Profile = styled.div`
@@ -18,6 +13,15 @@ const Profile = styled.div`
   align-items: center;
   gap: 2rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
+`;
+
+const ProfilePicture = styled.img`
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f5f5f5;
 `;
 
 const ProfileText = styled.div`
@@ -28,16 +32,6 @@ const Description = styled.p`
   font-size: 1.3rem;
   margin-bottom: 3rem;
   line-height: 1.8;
-`;
-
-const ProfilePicture = styled.img`
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #f5f5f5;
-  @media (max-width: ${configData.mobileThreshold}) {
-  }
 `;
 
 const Title = styled.h1`
@@ -70,9 +64,15 @@ const Links = styled.div`
 `;
 
 export default function About() {
+  const theme = useTheme();
+
   return (
-    <Container className="about section" id="about">
-      <Content>
+    <PageContainer
+      className="about"
+      id="about"
+      background={theme.colors.darkViolet}
+    >
+      <AboutContent>
         <Profile>
           <ProfilePicture src={ProfilePic} alt="Veli-Pekka Nurmi" />
           <ProfileText>
@@ -110,8 +110,8 @@ export default function About() {
           </Link>
         </Links>
         <Divider />
-      </Content>
-    </Container>
+      </AboutContent>
+    </PageContainer>
   );
 }
 

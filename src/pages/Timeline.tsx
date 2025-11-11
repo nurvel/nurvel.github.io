@@ -1,13 +1,22 @@
 import React from "react";
-import styled from "styled-components";
-import configData from "../common/config.json";
+import styled, { useTheme } from "styled-components";
+import { PageContainer, PageContent } from "../components/Page";
 
-const Container = styled.div`
-  background-color: ${configData.THEME_COLORS.DARK_BLUE};
+const TimelineContent = styled(PageContent)`
+  min-height: ${({ theme }) => theme.layout.sectionMinHeight};
 `;
 
 // https://stephane-monnot.github.io/react-vertical-timeline/#/
 
 export default function Timeline() {
-  return <Container className="timeline section">Timeline</Container>;
+  const theme = useTheme();
+
+  return (
+    <PageContainer
+      className="timeline"
+      background={theme.colors.darkBlue}
+    >
+      <TimelineContent>Timeline</TimelineContent>
+    </PageContainer>
+  );
 }
