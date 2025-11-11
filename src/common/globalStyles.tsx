@@ -1,7 +1,12 @@
 import { createGlobalStyle } from "styled-components";
-import configData from "./config.json";
 
 const GlobalStyle = createGlobalStyle`
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   html, body {
     max-width: 100%;
     width: 100%;
@@ -16,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.textPrimary};
+    font-family: ${({ theme }) => theme.typography.family};
+    font-weight: ${({ theme }) => theme.typography.weights.regular};
   }
 
   #root {
@@ -23,65 +32,62 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .section {
-    min-height: 100vh;
-    padding: 1em;
-
-    // CENTER SECTION CONTENT
+    min-height: ${({ theme }) => theme.layout.sectionMinHeight};
+    padding: ${({ theme }) => theme.layout.sectionPadding};
     display: flex;
     justify-content: center;
   }
 
+  h1, h2 {
+    color: ${({ theme }) => theme.colors.textPrimary};
+    font-family: ${({ theme }) => theme.typography.family};
+    font-weight: ${({ theme }) => theme.typography.weights.bold};
+    text-shadow: 0.1em 0.1em 0 ${({ theme }) => theme.colors.headingShadow};
+  }
+
   h1 {
-    color: #ffffff;
-    font-size: 5rem;
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: bold;
-    text-shadow: 0.1em 0.1em 0 hsl(9000 50% 20%);
+    font-size: ${({ theme }) => theme.typography.scale.h1};
   }
 
   h2 {
-    color: #ffffff;
-    font-size: 4rem;
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: bold;
-    text-shadow: 0.1em 0.1em 0 hsl(9000 50% 20%);
+    font-size: ${({ theme }) => theme.typography.scale.h2};
   }
 
   p {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight:400;
+    color: ${({ theme }) => theme.colors.textPrimary};
+    font-size: ${({ theme }) => theme.typography.scale.body};
+    font-family: ${({ theme }) => theme.typography.family};
+    font-weight: ${({ theme }) => theme.typography.weights.regular};
   }
 
-  a:link,a:visited, a:active   {
-    color: ${configData.THEME_COLORS.DARK_PINK};
+  a:link,
+  a:visited,
+  a:active {
+    color: ${({ theme }) => theme.colors.darkPink};
     text-decoration: none;
   }
 
   a:hover {
-    color: ${configData.THEME_COLORS.BRIGHT_PINK};
+    color: ${({ theme }) => theme.colors.brightPink};
     text-decoration: none;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     h1 {
-      font-size: 2.5rem;
-      text-shadow: 0.1em 0.1em 0 hsl(9000 50% 20%);
+      font-size: ${({ theme }) => theme.typography.scale.h1Mobile};
+      text-shadow: 0.1em 0.1em 0 ${({ theme }) => theme.colors.headingShadow};
     }
 
     h2 {
-      font-size: 2rem;
-      text-shadow: 0.1em 0.1em 0 hsl(9000 50% 20%);
+      font-size: ${({ theme }) => theme.typography.scale.h2Mobile};
+      text-shadow: 0.1em 0.1em 0 ${({ theme }) => theme.colors.headingShadow};
     }
+
     p {
-      font-size: 1rem;
-      font-weight:400;
+      font-size: ${({ theme }) => theme.typography.scale.bodyMobile};
+      font-weight: ${({ theme }) => theme.typography.weights.regular};
     }
   }
-
-
-
 `;
 
 export default GlobalStyle;

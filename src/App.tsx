@@ -1,7 +1,7 @@
-import "./styles.css";
 import React, { useEffect } from "react";
+import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "./common/globalStyles";
-import styled from "styled-components";
+import theme from "./common/theme";
 
 import Main from "./pages/Main";
 import About from "./pages/About";
@@ -122,13 +122,15 @@ export default function App() {
   useScrollSnap(SNAP_RATIO, SCROLL_IDLE_DELAY_MS);
 
   return (
-    <Container>
-      <GlobalStyle />
-      <Header />
-      <section>
-        <Main />
-        <About />
-      </section>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <GlobalStyle />
+        <Header />
+        <section>
+          <Main />
+          <About />
+        </section>
+      </Container>
+    </ThemeProvider>
   );
 }
