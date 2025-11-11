@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { useTheme } from "styled-components";
 
 import _video_mobile_webm from "../assets/img/bg-video-mobile.webm";
+import _video_mobile_mp4 from "../assets/img/bg-video-mobile.mp4";
+import heroPoster from "../assets/img/bg-lights.jpg";
 import { Button } from "../components/Button";
 import { PageContainer, PageContent } from "../components/Page";
 
@@ -37,18 +39,42 @@ const VideoBackground = styled.video`
   z-index: 0;
 `;
 
+const VideoFallback = styled.div`
+  position: absolute;
+  inset: 0;
+  background-image: url(${heroPoster});
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.8);
+  z-index: 0;
+`;
+
 export default function Main() {
   const theme = useTheme();
+  const [videoAvailable, setVideoAvailable] = useState(true);
 
   return (
     <PageContainer
       className="main"
       background={theme.colors.darkViolet}
     >
-      <VideoBackground loop muted autoPlay playsInline>
-        <source src={_video_mobile_webm} type="video/webm" />
-        Your browser does not support the video tag.
-      </VideoBackground>
+      {videoAvailable ? (
+        <VideoBackground
+          loop
+          muted
+          autoPlay
+          playsInline
+          preload="auto"
+          poster={heroPoster}
+          aria-hidden="true"
+          onError={() => setVideoAvailable(false)}
+        >
+          <source src={_video_mobile_webm} type="video/webm" />
+          <source src={_video_mobile_mp4} type="video/mp4" />
+        </VideoBackground>
+      ) : (
+        <VideoFallback aria-hidden="true" />
+      )}
       <HeroLayer>
         <Hero>
           <h1>Building products that matter.</h1>
