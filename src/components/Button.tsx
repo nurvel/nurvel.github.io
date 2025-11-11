@@ -1,9 +1,7 @@
-import React from "react";
-
 import styled from "styled-components";
 import configData from "../common/config.json";
 
-const Container = styled.div`
+export const Button = styled.button`
   background-color: #ffffff;
   box-shadow: 8px 8px 0px 0px hsl(9000 50% 20%);
   padding: 20px 20px 20px 20px;
@@ -25,18 +23,3 @@ const Container = styled.div`
     font-size: 0.8rem;
   }
 `;
-
-type ButtonProps = {
-  linkText: string;
-  href: string;
-};
-
-export default function Button(props: ButtonProps) {
-  const { linkText, href } = props;
-
-  return (
-    <Container as="a" href={href}>
-      {linkText}
-    </Container>
-  );
-}
