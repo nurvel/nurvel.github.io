@@ -3,7 +3,7 @@ import configData from "../common/config.json";
 import styled from "styled-components";
 
 import _video_mobile_webm from "../assets/img/bg-video-mobile.webm";
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 
 const Container = styled.div`
   background-color: ${configData.THEME_COLORS.DARK_VIOLET};
@@ -13,15 +13,15 @@ const Container = styled.div`
     top: 20vh;
     max-width: 650px;
     min-width: 300px;
-    text-align: center;
+    text-align: left;
     margin-left: 50px;
     margin-right: 50px;
   }
 
   .btnContainer {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
   }
 `;
 
@@ -48,9 +48,11 @@ export default function Main() {
         Your browser does not support the video tag.
       </video>
       <div className="hero">
-        <h1>Let's develop web services users love returning to.</h1>
+        <h1>Building products that matter.</h1>
         <div className="btnContainer">
-          <Button linkText={"READ MORE"} href={"#about"}></Button>
+          <Button as="a" href={"#about"}>
+            READ MORE
+          </Button>
         </div>
       </div>
     </Container>
