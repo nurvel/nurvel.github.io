@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 2rem;
   margin-bottom: 2.5rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.95);
