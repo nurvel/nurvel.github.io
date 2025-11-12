@@ -23,6 +23,10 @@ const Hero = styled.div`
   z-index: 1;
 `;
 
+const HeroTitle = styled.h1`
+  text-shadow: 0.1em 0.1em 0 ${({ theme }) => theme.colors.headingShadow};
+`;
+
 const ButtonRow = styled.div`
   display: flex;
   align-items: flex-start;
@@ -75,7 +79,7 @@ export default function Main() {
       )}
       <Content>
         <Hero>
-          <h1>Building products that matter.</h1>
+          <HeroTitle>Building products that matter.</HeroTitle>
           <ButtonRow>
             <Button as="a" href={"#about"}>
               READ MORE
