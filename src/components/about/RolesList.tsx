@@ -9,12 +9,24 @@ const RoleGrid = styled.div`
 
 const Pill = styled.span`
   padding: 0.6rem 1.2rem;
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   font-size: 0.95rem;
-  color: ${({ theme }) => theme.colors.textPrimary};
   font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid #666666;
+  color: #1a1a1a;
+  background: transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #e91e8c;
+    color: #e91e8c;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
 `;
 
 type RolesListProps = {
