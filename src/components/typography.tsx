@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SectionHeading = styled.h1`
-  margin: 0;
+  margin-bottom: 0.3em;
   font-size: ${({ theme }) => theme.typography.scale.h2};
   letter-spacing: -0.02em;
   line-height: 1.1;
