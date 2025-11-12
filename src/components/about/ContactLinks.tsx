@@ -5,10 +5,15 @@ const LinkGrid = styled.div`
   gap: 2rem;
   flex-wrap: wrap;
   margin-bottom: 4rem;
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+  }
 `;
 
 const StyledLink = styled.a`
-  color: ${({ theme }) => theme.colors.brightPink};
+  position: relative;
+  color: #1a1a1a;
   text-decoration: none;
   font-size: 1.05rem;
   font-weight: 500;
@@ -17,8 +22,23 @@ const StyledLink = styled.a`
   gap: 0.5rem;
   transition: color 0.2s ease;
 
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #e91e8c, #8b5cf6);
+    transition: width 0.3s ease;
+  }
+
   &:hover {
-    color: ${({ theme }) => theme.colors.brightPink};
+    color: #e91e8c;
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 `;
 
