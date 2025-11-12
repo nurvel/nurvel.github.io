@@ -42,7 +42,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.textPrimary};
     font-family: ${({ theme }) => theme.typography.family};
     font-weight: ${({ theme }) => theme.typography.weights.bold};
-    text-shadow: 0.1em 0.1em 0 ${({ theme }) => theme.colors.headingShadow};
   }
 
   h1 {
@@ -75,12 +74,10 @@ const GlobalStyle = createGlobalStyle`
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     h1 {
       font-size: ${({ theme }) => theme.typography.scale.h1Mobile};
-      text-shadow: 0.1em 0.1em 0 ${({ theme }) => theme.colors.headingShadow};
     }
 
     h2 {
       font-size: ${({ theme }) => theme.typography.scale.h2Mobile};
-      text-shadow: 0.1em 0.1em 0 ${({ theme }) => theme.colors.headingShadow};
     }
 
     p {
