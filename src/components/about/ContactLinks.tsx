@@ -4,7 +4,7 @@ const LinkGrid = styled.div`
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 
   @media (max-width: 768px) {
     gap: 1.5rem;

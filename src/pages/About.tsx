@@ -24,9 +24,8 @@ const Description = styled(BodyText)`
 `;
 
 const Focus = styled.div`
-  margin-top: 4rem;
+  margin-top: 2rem;
   padding-top: 3rem;
-  border-top: 1px solid #f0f0f0;
 
   @media (max-width: 768px) {
     margin-top: 3rem;
@@ -43,16 +42,30 @@ const FocusTitle = styled.h2`
   font-weight: 600;
 `;
 
-const FocusContent = styled.p`
-  font-size: 1.05rem;
-  color: #666666;
-  line-height: 1.7;
-  max-width: 650px;
+const FocusContent = styled(BodyText)`
+  font-size: 1rem;
+  line-height: 1.6;
 
   span {
     color: #1a1a1a;
     font-weight: 600;
-    background: linear-gradient(180deg, transparent 60%, rgba(233, 30, 140, 0.15) 60%);
+    background: linear-gradient(
+      180deg,
+      transparent 60%,
+      rgba(233, 30, 140, 0.15) 60%
+    );
+  }
+`;
+
+const ContactLinksContainer = styled.div`
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0rem;
+
+  @media (max-width: 768px) {
+    padding-bottom: 1.5rem;
   }
 `;
 
@@ -60,50 +73,55 @@ export default function About() {
   const theme = useTheme();
 
   return (
-    <PageContainer
-      className="about"
-      id="about"
-      background="#ffffff"
-    >
+    <PageContainer className="about" id="about" background="#ffffff">
       <Content>
         <ProfileCard
           name="Veli-Pekka Nurmi"
-          subtitle="Product Engineer | Bridging product & engineering with AI-augmented development"
+          subtitle="Bridging product & engineering with AI-augmented development"
           avatarSrc={ProfilePic}
           avatarAlt="Veli-Pekka Nurmi"
         />
 
         <Description>
-          Product development specialist with 15+ years bridging business
-          strategy and technical execution. Currently exploring how AI
-          transforms software development while keeping humans at the center.
+          I’m a Product Engineer with more than 15 years of experience
+          connecting business goals with technology. My work spans SaaS
+          platforms, diverse private-sector environments, and public-sector
+          systems and online services, across both technical and product-facing
+          roles.
         </Description>
 
         <RolesList
-          roles={["Product Owner", "Full-Stack Developer", "Tech Lead"]}
-        />
-
-        <ContactLinks
-          links={[
-            {
-              label: "LinkedIn",
-              href: "https://www.linkedin.com/in/veli-pekkanurmi",
-            },
-            { label: "Github", href: "https://github.com/nurvel" },
-            { label: "Email", href: "mailto:nurmi.vp@gmail.com" },
+          roles={[
+            "Product Owner",
+            "Full-Stack Developer",
+            "Head of R&D",
+            "Performance Marketer",
           ]}
         />
+
         <Divider />
         <Focus>
           <FocusTitle>Current focus</FocusTitle>
           <FocusContent>
             Exploring <span>agentic coding</span> and{" "}
-            <span>spec-driven development</span> — where AI handles
+            <span>spec-driven development</span> — where AI is used as a tool for
             implementation while human expertise guides strategic direction,
             requirements engineering, and solution architecture. My background
             in both business and technology positions me well for this shift.
           </FocusContent>
         </Focus>
+        <ContactLinksContainer>
+          <ContactLinks
+            links={[
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/veli-pekkanurmi",
+              },
+              { label: "Github", href: "https://github.com/nurvel" },
+              { label: "Email", href: "mailto:nurmi.vp@gmail.com" },
+            ]}
+          />
+        </ContactLinksContainer>
       </Content>
     </PageContainer>
   );
@@ -112,5 +130,9 @@ export default function About() {
 const Divider = styled.div`
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, rgba(233, 30, 140, 0.2), rgba(139, 92, 246, 0.2));
+  background: linear-gradient(
+    90deg,
+    rgba(233, 30, 140, 0.2),
+    rgba(139, 92, 246, 0.2)
+  );
 `;
