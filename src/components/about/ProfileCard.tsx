@@ -5,8 +5,18 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   flex-wrap: wrap;
+  padding: 2rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
 `;
 
 const Avatar = styled.img`
@@ -14,7 +24,9 @@ const Avatar = styled.img`
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #f5f5f5;
+  border: 3px solid transparent;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #8b5cf6, #e91e8c, #3b82f6) border-box;
 `;
 
 const Text = styled.div`
