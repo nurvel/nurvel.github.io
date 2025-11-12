@@ -57,12 +57,21 @@ const FocusContent = styled(BodyText)`
   }
 `;
 
+const TopBar = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(90deg, #7209b7, #be296a);
+`;
+
 const ContactLinksContainer = styled.div`
   width: 100%;
   margin-top: auto;
   display: flex;
   justify-content: center;
-  padding-bottom: 0rem;
+  padding-bottom: 2rem;
 
   @media (max-width: 768px) {
     padding-bottom: 1.5rem;
@@ -74,6 +83,7 @@ export default function About() {
 
   return (
     <PageContainer className="about" id="about" background="#ffffff">
+      <TopBar />
       <Content>
         <ProfileCard
           name="Veli-Pekka Nurmi"
