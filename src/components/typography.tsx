@@ -26,5 +26,4 @@ export const BodyText = styled.p`
   line-height: 1.8;
   font-weight: ${({ theme }) => theme.typography.weights.regular};
   color: #666666;
-  max-width: 650px;
 `;
