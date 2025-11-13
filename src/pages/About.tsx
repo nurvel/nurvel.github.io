@@ -1,4 +1,4 @@
-import styled, { keyframes, useTheme } from "styled-components";
+import styled, { useTheme } from "styled-components";
 import ProfilePic from "../assets/img/veli-pekka-nurmi-profile.png";
 import { PageContainer, PageContent } from "../components/Page";
 import { BodyText } from "../components/typography";
@@ -43,16 +43,39 @@ const FocusTitle = styled.h2`
 const FocusContent = styled(BodyText)`
   font-size: 1rem;
   line-height: 1.6;
+`;
 
-  span {
-    color: #1a1a1a;
-    font-weight: 600;
-    background: linear-gradient(
-      180deg,
-      transparent 60%,
-      rgba(233, 30, 140, 0.15) 60%
-    );
+const Highlight = styled.span`
+  color: #1a1a1a;
+  font-weight: 600;
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    rgba(233, 30, 140, 0.2) 60%
+  );
+`;
+
+const RecentWorkGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const RecentWorkItem = styled(FocusContent)`
+  padding: 1.25rem;
+  border-radius: 18px;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  background: #ffffff;
+  color: #1a1a1a;
 `;
 
 const TopBar = styled.div`
@@ -112,12 +135,34 @@ export default function About() {
         <Focus>
           <FocusTitle>Current focus</FocusTitle>
           <FocusContent>
-            Exploring <span>agentic coding</span> and{" "}
-            <span>spec-driven development</span> — where AI is used as a tool
-            for implementation while human expertise guides strategic direction,
-            requirements engineering, and solution architecture. My background
-            in both business and technology positions me well for this shift.
+            Exploring <Highlight>agentic coding</Highlight> and{" "}
+            <Highlight>spec-driven development</Highlight> — where AI is used as
+            a tool for implementation while human expertise guides strategic
+            direction, requirements engineering, and solution architecture. My
+            background in both business and technology positions me well for
+            this shift.
           </FocusContent>
+        </Focus>
+        <Focus>
+          <FocusTitle>Recent work</FocusTitle>
+          <RecentWorkGrid>
+            <RecentWorkItem>
+              <Highlight>Contract monitoring system</Highlight> for{" "}
+              <Highlight>HSL</Highlight> (via <Highlight>Twoday</Highlight>) —
+              expanding into multi-modal transport visibility and proactive
+              contract KPIs.
+            </RecentWorkItem>
+            <RecentWorkItem>
+              <Highlight>Configuration UI</Highlight> for{" "}
+              <Highlight>Aidon</Highlight> (via <Highlight>Twoday</Highlight>) —
+              schema-driven forms with durable persistence model for utilities.
+            </RecentWorkItem>
+            <RecentWorkItem>
+              <Highlight>SaaS marketplace</Highlight> for{" "}
+              <Highlight>SaaShop</Highlight> — grew ARR to EUR 1.4M while
+              improving onboarding reliability for SMB customers.
+            </RecentWorkItem>
+          </RecentWorkGrid>
         </Focus>
         <ContactLinksContainer>
           <ContactLinks
