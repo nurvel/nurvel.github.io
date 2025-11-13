@@ -24,7 +24,7 @@ const Description = styled(BodyText)`
 `;
 
 const Focus = styled.div`
-  padding-top: 2rem;
+  padding-top: 3rem;
 
   @media (max-width: 768px) {
     padding-top: 2rem;
@@ -147,20 +147,17 @@ export default function About() {
           <FocusTitle>Recent work</FocusTitle>
           <RecentWorkGrid>
             <RecentWorkItem>
-              <Highlight>Contract monitoring system</Highlight> for{" "}
-              <Highlight>HSL</Highlight> (via <Highlight>Twoday</Highlight>) —
-              expanding into multi-modal transport visibility and proactive
-              contract KPIs.
+              <Highlight>Contract monitoring system</Highlight> for HSL (via
+              Twoday) — expanding into multi-modal transport visibility and
+              proactive contract KPIs and compensations to operators.
             </RecentWorkItem>
             <RecentWorkItem>
-              <Highlight>Configuration UI</Highlight> for{" "}
-              <Highlight>Aidon</Highlight> (via <Highlight>Twoday</Highlight>) —
+              <Highlight>Configuration UI</Highlight> for Aidon (via Twoday) —
               schema-driven forms with durable persistence model for utilities.
             </RecentWorkItem>
             <RecentWorkItem>
-              <Highlight>SaaS marketplace</Highlight> for{" "}
-              <Highlight>SaaShop</Highlight> — grew ARR to EUR 1.4M while
-              improving onboarding reliability for SMB customers.
+              <Highlight>SaaS marketplace</Highlight> for SaaShop — grew ARR to
+              EUR 1.4M while improving onboarding reliability for SMB customers.
             </RecentWorkItem>
           </RecentWorkGrid>
         </Focus>
