@@ -71,7 +71,8 @@ const ContactLinksContainer = styled.div`
   margin-top: auto;
   display: flex;
   justify-content: center;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
 
   @media (max-width: 768px) {
     padding-bottom: 1.5rem;
