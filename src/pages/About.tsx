@@ -24,11 +24,9 @@ const Description = styled(BodyText)`
 `;
 
 const Focus = styled.div`
-  margin-top: 2rem;
-  padding-top: 3rem;
+  padding-top: 2rem;
 
   @media (max-width: 768px) {
-    margin-top: 3rem;
     padding-top: 2rem;
   }
 `;
@@ -115,8 +113,8 @@ export default function About() {
           <FocusTitle>Current focus</FocusTitle>
           <FocusContent>
             Exploring <span>agentic coding</span> and{" "}
-            <span>spec-driven development</span> — where AI is used as a tool for
-            implementation while human expertise guides strategic direction,
+            <span>spec-driven development</span> — where AI is used as a tool
+            for implementation while human expertise guides strategic direction,
             requirements engineering, and solution architecture. My background
             in both business and technology positions me well for this shift.
           </FocusContent>
