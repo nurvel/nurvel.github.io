@@ -9,7 +9,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <Main />
+        {/* <Main /> */}
         <About />
       </Layout>
     </ThemeProvider>

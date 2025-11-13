@@ -111,8 +111,8 @@ export function useScrollSnap({
         if (targetIndex !== activeIndex) {
           activeIndex = targetIndex;
           updateActiveSection(activeIndex);
+          snapTo(activeIndex);
         }
-        snapTo(activeIndex);
       }, idleDelay);
     };
 
