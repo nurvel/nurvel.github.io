@@ -159,6 +159,12 @@ export default function About() {
               <Highlight>SaaS marketplace</Highlight> for SaaShop — grew ARR to
               EUR 1.4M while improving onboarding reliability for SMB customers.
             </RecentWorkItem>
+            <RecentWorkItem>
+              <Highlight>Website & SEO</Highlight> for{" "}
+              <a href="https://kauneushoitolahanna.fi" target="_blank">Kauneushoitola Hanna </a>—
+              created and optimised a site for a local beauty salon.
+              Achieved #1 ranking for “Kosmetologi Järvenpää”.
+            </RecentWorkItem>
           </RecentWorkGrid>
         </Focus>
         <ContactLinksContainer>
