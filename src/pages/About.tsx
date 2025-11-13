@@ -93,7 +93,7 @@ const ContactLinksContainer = styled.div`
   display: flex;
   justify-content: center;
   padding-bottom: 1rem;
-  padding-top: 2rem;
+  padding-top: 4rem;
 
   @media (max-width: 768px) {
     padding-bottom: 1.5rem;
@@ -157,13 +157,16 @@ export default function About() {
             </RecentWorkItem>
             <RecentWorkItem>
               <Highlight>SaaS marketplace</Highlight> for SaaShop — grew ARR to
-              EUR 1.4M while improving onboarding reliability for SMB customers.
+              EUR 1.4M while improving reliability, reducing customer support
+              feedback, and expanding the SMB customer base.
             </RecentWorkItem>
             <RecentWorkItem>
               <Highlight>Website & SEO</Highlight> for{" "}
-              <a href="https://kauneushoitolahanna.fi" target="_blank">Kauneushoitola Hanna </a>—
-              created and optimised a site for a local beauty salon.
-              Achieved #1 ranking for “Kosmetologi Järvenpää”.
+              <a href="https://kauneushoitolahanna.fi" target="_blank">
+                Kauneushoitola Hanna{" "}
+              </a>
+              — created and optimised a site for a local beauty salon. Achieved
+              #1 ranking for “Kosmetologi Järvenpää”.
             </RecentWorkItem>
           </RecentWorkGrid>
         </Focus>
